@@ -1,0 +1,250 @@
+.header {
+  grid-area: head;
+  background-color: $color-grey-light-1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+
+  &__logo {
+    margin-left: 4rem;
+    height: 4.6rem;
+    display: block;
+  }
+
+  @media (max-width: $bp-media) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    &__logo {
+      margin-left: 0;
+    }
+  }
+}
+
+.search {
+  background-color: #fff;
+  border-radius: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 3rem;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+
+  &:focus-within {
+    -webkit-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    transform: translateY(-2px);
+    -webkit-box-shadow: 0 0.7rem 3rem rgba($color-grey-dark-1, 0.08);
+    box-shadow: 0 0.7rem 3rem rgba($color-grey-dark-1, 0.08);
+  }
+
+  &__field {
+    border: none;
+    background: none;
+    font-family: inherit;
+    color: inherit;
+    font-size: 1.7rem;
+    width: 30rem;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-grey-light-3;
+    }
+
+    &::-moz-placeholder {
+      color: $color-grey-light-3;
+    }
+
+    &:-ms-input-placeholder {
+      color: $color-grey-light-3;
+    }
+
+    &::-ms-input-placeholder {
+      color: $color-grey-light-3;
+    }
+
+    &::placeholder {
+      color: $color-grey-light-3;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      width: auto;
+
+      &::-webkit-input-placeholder {
+        color: white;
+      }
+
+      &::-moz-placeholder {
+        color: white;
+      }
+
+      &:-ms-input-placeholder {
+        color: white;
+      }
+
+      &::-ms-input-placeholder {
+        color: white;
+      }
+
+      &::placeholder {
+        color: white;
+      }
+    }
+  }
+
+  &__btn {
+    font-weight: 600;
+    font-family: inherit;
+  }
+
+  @media (max-width: $bp-smallest) {
+    &__field {
+      width: 12rem;
+    }
+
+    &__btn {
+      padding: 1rem 2rem;
+    }
+  }
+}
+
+.nav {
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  margin-right: 2.5rem;
+
+  &__list {
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__btn {
+    height: 100%;
+    font-family: inherit;
+    color: inherit;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 1.5rem;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    svg {
+      height: 2.4rem;
+      width: 2.4rem;
+      fill: $color-primary;
+      margin-right: 0.7rem;
+      -webkit-transform: translateY(-1px);
+      -ms-transform: translateY(-1px);
+      transform: translateY(-1px);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: $color-grey-light-2;
+    }
+  }
+
+  @media (max-width: $bp-media) {
+    margin-right: 0;
+    width: 100%;
+
+    &__list {
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+    }
+  }
+}
+
+.bookmarks {
+  padding: 1rem 0;
+  position: absolute;
+  //right: 0;
+  right: -2.5rem;
+  z-index: 10;
+  width: 40rem;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0.8rem 5rem 2rem rgba($color-grey-dark-1, 0.1);
+  box-shadow: 0 0.8rem 5rem 2rem rgba($color-grey-dark-1, 0.1);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s 0.2s;
+  -webkit-transition: all 0.2s 0.2s;
+  -moz-transition: all 0.2s 0.2s;
+  -ms-transition: all 0.2s 0.2s;
+  -o-transition: all 0.2s 0.2s;
+
+  &__list {
+    list-style: none;
+  }
+
+  &__field {
+    cursor: pointer;
+    padding: 0 4rem;
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: $color-grey-light-2;
+    }
+  }
+
+  &:hover,
+  .nav__btn--bookmarks:hover + & {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  @media all and (max-width: $bp-media) {
+    width: 35rem;
+  }
+}

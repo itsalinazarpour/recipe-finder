@@ -1,0 +1,24 @@
+{
+  "devDependencies": {
+    "@parcel/transformer-html": "^2.7.0",
+    "@parcel/transformer-sass": "^2.7.0",
+    "parcel": "^2.7.0"
+  },
+  "name": "starter",
+  "version": "1.0.0",
+  "default": "index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "targets": {
+    "main": false
+  },
+  "dependencies": {
+    "fracty": "^1.0.11"
+  },
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Ali Nazarpour",
+  "license": "ISC",
+  "description": ""
+}

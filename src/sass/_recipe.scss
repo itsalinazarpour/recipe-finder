@@ -1,0 +1,284 @@
+.recipe {
+  background-color: $color-grey-light-1;
+
+  ///////////
+  // FIGURE
+  &__fig {
+    height: 32rem;
+    position: relative;
+    // transform: scale(1.04) translateY(-1px);
+    -webkit-transform-origin: top;
+    -ms-transform-origin: top;
+    transform-origin: top;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: -webkit-gradient(
+        linear,
+        left top,
+        right bottom,
+        from($color-grad-1),
+        to($color-grad-2)
+      );
+      background-image: -o-linear-gradient(
+        left top,
+        $color-grad-1,
+        $color-grad-2
+      );
+      background-image: linear-gradient(
+        to right bottom,
+        $color-grad-1,
+        $color-grad-2
+      );
+      // disable before, default opacity was 0.6
+      opacity: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    display: block;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+
+  &__title {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, 20%) skewY(-6deg);
+    -ms-transform: translate(-50%, 20%) skewY(-6deg);
+    transform: translate(-50%, 20%) skewY(-6deg);
+    color: #fff;
+    font-weight: 700;
+    font-size: 3.25rem;
+    text-transform: uppercase;
+    width: 50%;
+    line-height: 1.95;
+    text-align: center;
+
+    span {
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      padding: 1.3rem 2rem;
+      background-image: -webkit-gradient(
+        linear,
+        left top,
+        right bottom,
+        from($color-grad-1),
+        to($color-grad-2)
+      );
+      background-image: -o-linear-gradient(
+        left top,
+        $color-grad-1,
+        $color-grad-2
+      );
+      background-image: linear-gradient(
+        to right bottom,
+        $color-grad-1,
+        $color-grad-2
+      );
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 70%;
+    }
+  }
+
+  ///////////
+  // DETAILS
+  &__details {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 7.5rem 8rem 3.5rem 8rem;
+  }
+
+  &__info {
+    font-size: 1.65rem;
+    text-transform: uppercase;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-right: 4.5rem;
+    }
+
+    @media all and (max-width: $bp-media) {
+      margin: 1rem;
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__info-icon {
+    height: 2.35rem;
+    width: 2.35rem;
+    fill: $color-primary;
+    margin-right: 1.15rem;
+  }
+
+  &__info-data {
+    margin-right: 0.5rem;
+    font-weight: 700;
+  }
+
+  &__info-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 1.6rem;
+    -webkit-transform: translateY(-1px);
+    -ms-transform: translateY(-1px);
+    transform: translateY(-1px);
+  }
+
+  &__user-generated {
+    background-color: darken($color-grey-light-2, 2%);
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 10rem;
+
+    margin-left: auto;
+    margin-right: 1.75rem;
+
+    svg {
+      height: 2.25rem;
+      width: 2.25rem;
+      fill: $color-primary;
+    }
+  }
+
+  ///////////
+  // INGREDIENTS
+  &__ingredients {
+    padding: 5rem 8rem;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    background-color: $color-grey-light-2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  &__ingredient-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem 3rem;
+    list-style: none;
+  }
+
+  &__ingredient {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: $color-primary;
+    margin-right: 1.1rem;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    margin-top: 0.1rem;
+  }
+
+  &__quantity {
+    margin-right: 0.5rem;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+  }
+
+  ///////////
+  // DIRECTIONS
+  &__directions {
+    padding: 5rem 10rem;
+    padding-bottom: 5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  &__directions-text {
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 3.5rem;
+    color: $color-grey-dark-2;
+  }
+
+  &__publisher {
+    font-weight: 700;
+  }
+
+  @media all and (max-width: $bp-media) {
+    &__details {
+      padding: 7.5rem 1rem 3.5rem;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+    }
+    &__ingredients {
+      padding: 5rem 1rem;
+      line-height: 1.2;
+    }
+    &__ingredient-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem 0;
+      list-style: none;
+    }
+    &__directions {
+      padding: 5rem 1rem;
+      padding-bottom: 5rem;
+    }
+    &__title {
+      font-size: 2rem;
+      line-height: 2;
+    }
+  }
+}
